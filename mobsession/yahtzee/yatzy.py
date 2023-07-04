@@ -79,7 +79,6 @@ class Yatzy:
 
     def fives(self):
         s = 0
-        i = 0
         for i in range(len(self.dice)):
             if self.dice[i] == 5:
                 s = s + 5
@@ -100,7 +99,6 @@ class Yatzy:
         counts[self.dice[2] - 1] += 1
         counts[self.dice[3] - 1] += 1
         counts[self.dice[4] - 1] += 1
-        at = 0
         for at in range(6):
             if counts[6 - at - 1] == 2:
                 result = (6 - at) * 2
@@ -196,9 +194,7 @@ class Yatzy:
         d_3 = self.dice[3]
         d_4 = self.dice[4]
         result = 0
-        tallies = []
         _2 = False
-        i = 0
         _2_at = 0
         _3 = False
         _3_at = 0
