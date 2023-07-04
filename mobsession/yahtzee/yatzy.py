@@ -93,12 +93,7 @@ class Yatzy:
 
     def one_pair(self):
         result = 0
-        counts = [0] * 6
-        counts[self.dice[0] - 1] += 1
-        counts[self.dice[1] - 1] += 1
-        counts[self.dice[2] - 1] += 1
-        counts[self.dice[3] - 1] += 1
-        counts[self.dice[4] - 1] += 1
+        counts = self.method_name()
         for at in range(6):
             if counts[6 - at - 1] == 2:
                 result = (6 - at) * 2
@@ -106,12 +101,7 @@ class Yatzy:
         return result
 
     def two_pairs(self):
-        counts = [0] * 6
-        counts[self.dice[0] - 1] += 1
-        counts[self.dice[1] - 1] += 1
-        counts[self.dice[2] - 1] += 1
-        counts[self.dice[3] - 1] += 1
-        counts[self.dice[4] - 1] += 1
+        counts = self.method_name()
         n = 0
         score = 0
         for i in range(6):
@@ -126,63 +116,53 @@ class Yatzy:
 
     def four_of_a_knd(self):
         result = 0
-        tallies = [0] * 6
-        tallies[self.dice[0] - 1] += 1
-        tallies[self.dice[1] - 1] += 1
-        tallies[self.dice[2] - 1] += 1
-        tallies[self.dice[3] - 1] += 1
-        tallies[self.dice[4] - 1] += 1
+        counts = self.method_name()
         for i in range(6):
-            if tallies[i] >= 4:
+            if counts[i] >= 4:
                 result = (i + 1) * 4
 
         return result
 
+    def method_name(self) -> [int]:
+        counts = [0] * 6
+        counts[self.dice[0] - 1] += 1
+        counts[self.dice[1] - 1] += 1
+        counts[self.dice[2] - 1] += 1
+        counts[self.dice[3] - 1] += 1
+        counts[self.dice[4] - 1] += 1
+
+        return counts
+
     def three_of_a_kind(self):
         result = 0
-        t = [0] * 6
-        t[self.dice[0] - 1] += 1
-        t[self.dice[1] - 1] += 1
-        t[self.dice[2] - 1] += 1
-        t[self.dice[3] - 1] += 1
-        t[self.dice[4] - 1] += 1
+        counts = self.method_name()
         for i in range(6):
-            if t[i] >= 3:
+            if counts[i] >= 3:
                 result = (i + 1) * 3
         return result
 
     def small_straight(self):
         result = 0
-        tallies = [0] * 6
-        tallies[self.dice[0] - 1] += 1
-        tallies[self.dice[1] - 1] += 1
-        tallies[self.dice[2] - 1] += 1
-        tallies[self.dice[3] - 1] += 1
-        tallies[self.dice[4] - 1] += 1
+        counts = self.method_name()
         if (
-            tallies[0] == 1
-            and tallies[1] == 1
-            and tallies[2] == 1
-            and tallies[3] == 1
-            and tallies[4] == 1
+            counts[0] == 1
+            and counts[1] == 1
+            and counts[2] == 1
+            and counts[3] == 1
+            and counts[4] == 1
         ):
             result = 15
         return result
 
     def large_straight(self):
         result = 0
-        tallies = [0] * 6
-        tallies[self.dice[0] - 1] += 1
-        tallies[self.dice[1] - 1] += 1
-        tallies[self.dice[2] - 1] += 1
-        tallies[self.dice[3] - 1] += 1
-        tallies[self.dice[4] - 1] += 1
+        counts = self.method_name()
         if (
-            tallies[1] == 1
-            and tallies[2] == 1
-            and tallies[3] == 1
-            and tallies[4] == 1
-            and tallies[5] == 1
+            counts[1] == 1
+            and counts[2] == 1
+            and counts[3] == 1
+            and counts[4] == 1
+            and counts[5] == 1
         ):
             result = 20
         return result
