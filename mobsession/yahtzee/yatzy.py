@@ -112,13 +112,23 @@ class Yatzy:
         return Yatzy(d1, d2, d3, d4, d5).aaaa()
 
     def aaaa(self):
-        return method_name(
-            self.dice[0],
-            self.dice[1],
-            self.dice[2],
-            self.dice[3],
-            self.dice[4],
-        )
+        counts = [0] * 6
+        counts[self.dice[0] - 1] += 1
+        counts[self.dice[1] - 1] += 1
+        counts[self.dice[2] - 1] += 1
+        counts[self.dice[3] - 1] += 1
+        counts[self.dice[4] - 1] += 1
+        n = 0
+        score = 0
+        for i in range(6):
+            if counts[6 - i - 1] >= 2:
+                n = n + 1
+                score += 6 - i
+        if n == 2:
+            result = score * 2
+        else:
+            result = 0
+        return result
 
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):
@@ -212,22 +222,3 @@ class Yatzy:
             return _2_at * 2 + _3_at * 3
         else:
             return 0
-
-
-def method_name(d1, d2, d3, d4, d5):
-    counts = [0] * 6
-    counts[d1 - 1] += 1
-    counts[d2 - 1] += 1
-    counts[d3 - 1] += 1
-    counts[d4 - 1] += 1
-    counts[d5 - 1] += 1
-    n = 0
-    score = 0
-    for i in range(6):
-        if counts[6 - i - 1] >= 2:
-            n = n + 1
-            score += 6 - i
-    if n == 2:
-        return score * 2
-    else:
-        return 0
