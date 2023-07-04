@@ -7,7 +7,7 @@ class Yatzy:
 
     def yatzy(self) -> int:
         result = 0
-        counts = self.method_name()
+        counts = self.histogram()
         for i in range(len(counts)):
             if counts[i] == 5:
                 result = 50
@@ -79,7 +79,7 @@ class Yatzy:
 
     def one_pair(self):
         result = 0
-        counts = self.method_name()
+        counts = self.histogram()
         for at in range(6):
             if counts[6 - at - 1] == 2:
                 result = (6 - at) * 2
@@ -87,7 +87,7 @@ class Yatzy:
         return result
 
     def two_pairs(self):
-        counts = self.method_name()
+        counts = self.histogram()
         n = 0
         score = 0
         for i in range(6):
@@ -102,23 +102,23 @@ class Yatzy:
 
     def four_of_a_knd(self):
         result = 0
-        counts = self.method_name()
+        counts = self.histogram()
         for i in range(6):
             if counts[i] >= 4:
                 result = (i + 1) * 4
 
         return result
 
-    def method_name(self) -> [int]:
-        counts = [0] * (len(self.dice) + 1)
+    def histogram(self) -> [int]:
+        result = [0] * 6
         for die in self.dice:
-            counts[die - 1] += 1
+            result[die - 1] += 1
 
-        return counts
+        return result
 
     def three_of_a_kind(self):
         result = 0
-        counts = self.method_name()
+        counts = self.histogram()
         for i in range(6):
             if counts[i] >= 3:
                 result = (i + 1) * 3
@@ -127,7 +127,7 @@ class Yatzy:
 
     def small_straight(self):
         result = 0
-        counts = self.method_name()
+        counts = self.histogram()
         if (
             counts[0] == 1
             and counts[1] == 1
@@ -141,7 +141,7 @@ class Yatzy:
 
     def large_straight(self):
         result = 0
-        counts = self.method_name()
+        counts = self.histogram()
         if (
             counts[1] == 1
             and counts[2] == 1
