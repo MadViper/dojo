@@ -18,10 +18,9 @@ class Yatzy:
         return total
 
     def yatzy(self):
-        dice = self.dice
         result = 0
-        counts = [0] * (len(dice) + 1)
-        for die in dice:
+        counts = [0] * (len(self.dice) + 1)
+        for die in self.dice:
             counts[die - 1] += 1
         for i in range(len(counts)):
             if counts[i] == 5:
