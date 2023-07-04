@@ -79,9 +79,9 @@ def test_small_straight():
 
 
 def test_large_straight():
-    assert Yatzy(6, 2, 3, 4, 5).large_straight(6, 2, 3, 4, 5) == 20
-    assert Yatzy(2, 3, 4, 5, 6).large_straight(2, 3, 4, 5, 6) == 20
-    assert Yatzy(1, 2, 2, 4, 5).large_straight(1, 2, 2, 4, 5) == 0
+    assert Yatzy(6, 2, 3, 4, 5).large_straight() == 20
+    assert Yatzy(2, 3, 4, 5, 6).large_straight() == 20
+    assert Yatzy(1, 2, 2, 4, 5).large_straight() == 0
 
 
 def test_full_house():
