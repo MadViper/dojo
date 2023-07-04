@@ -28,12 +28,8 @@ class Yatzy:
     def fives(self) -> int:
         return self.dice.count(5) * 5
 
-    def sixes(self):
-        total = 0
-        for at in range(len(self.dice)):
-            if self.dice[at] == 6:
-                total = total + 6
-        return total
+    def sixes(self) -> int:
+        return self.dice.count(6) * 6
 
     def one_pair(self):
         result = 0
