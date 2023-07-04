@@ -92,19 +92,20 @@ class Yatzy:
                 sum = sum + 6
         return sum
 
-    @staticmethod
-    def one_pair(d1, d2, d3, d4, d5):
+    def one_pair(self):
+        result = 0
         counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
+        counts[self.dice[0] - 1] += 1
+        counts[self.dice[1] - 1] += 1
+        counts[self.dice[2] - 1] += 1
+        counts[self.dice[3] - 1] += 1
+        counts[self.dice[4] - 1] += 1
         at = 0
         for at in range(6):
             if counts[6 - at - 1] == 2:
-                return (6 - at) * 2
-        return 0
+                result = (6 - at) * 2
+                break
+        return result
 
     @staticmethod
     def two_pairs(d1, d2, d3, d4, d5):

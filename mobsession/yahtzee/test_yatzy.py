@@ -48,9 +48,9 @@ def test_sixes():
 
 
 def test_one_pair():
-    assert Yatzy(3, 4, 3, 5, 6).one_pair(3, 4, 3, 5, 6) == 6
-    assert Yatzy(5, 3, 3, 3, 5).one_pair(5, 3, 3, 3, 5) == 10
-    assert Yatzy(5, 3, 6, 6, 5).one_pair(5, 3, 6, 6, 5) == 12
+    assert Yatzy(3, 4, 3, 5, 6).one_pair() == 6
+    assert Yatzy(5, 3, 3, 3, 5).one_pair() == 10
+    assert Yatzy(5, 3, 6, 6, 5).one_pair() == 12
 
 
 def test_two_pairs():
