@@ -20,8 +20,8 @@ def test_ones():
 
 
 def test_twos():
-    assert Yatzy(1, 2, 3, 2, 6).twos(1, 2, 3, 2, 6) == 4
-    assert Yatzy(2, 2, 2, 2, 2).twos(2, 2, 2, 2, 2) == 10
+    assert Yatzy(1, 2, 3, 2, 6).twos() == 4
+    assert Yatzy(2, 2, 2, 2, 2).twos() == 10
 
 
 def test_threes():
