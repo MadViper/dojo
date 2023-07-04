@@ -29,32 +29,32 @@ class Yatzy:
         return result
 
     def ones(self):
-        sum = 0
+        total = 0
         if self.dice[0] == 1:
-            sum += 1
+            total += 1
         if self.dice[1] == 1:
-            sum += 1
+            total += 1
         if self.dice[2] == 1:
-            sum += 1
+            total += 1
         if self.dice[3] == 1:
-            sum += 1
+            total += 1
         if self.dice[4] == 1:
-            sum += 1
-        return sum
+            total += 1
+        return total
 
     def twos(self):
-        sum = 0
+        total = 0
         if self.dice[0] == 2:
-            sum += 2
+            total += 2
         if self.dice[1] == 2:
-            sum += 2
+            total += 2
         if self.dice[2] == 2:
-            sum += 2
+            total += 2
         if self.dice[3] == 2:
-            sum += 2
+            total += 2
         if self.dice[4] == 2:
-            sum += 2
-        return sum
+            total += 2
+        return total
 
     def threes(self):
         s = 0
@@ -71,11 +71,11 @@ class Yatzy:
         return s
 
     def fours(self):
-        sum = 0
+        total = 0
         for at in range(5):
             if self.dice[at] == 4:
-                sum += 4
-        return sum
+                total += 4
+        return total
 
     def fives(self):
         s = 0
@@ -85,11 +85,11 @@ class Yatzy:
         return s
 
     def sixes(self):
-        sum = 0
+        total = 0
         for at in range(len(self.dice)):
             if self.dice[at] == 6:
-                sum = sum + 6
-        return sum
+                total = total + 6
+        return total
 
     def one_pair(self):
         result = 0
