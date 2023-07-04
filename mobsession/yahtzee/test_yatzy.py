@@ -73,9 +73,9 @@ def test_four_of_a_knd():
 
 
 def test_small_straight():
-    assert Yatzy(1, 2, 3, 4, 5).small_straight(1, 2, 3, 4, 5) == 15
-    assert Yatzy(2, 3, 4, 5, 1).small_straight(2, 3, 4, 5, 1) == 15
-    assert Yatzy(1, 2, 2, 4, 5).small_straight(1, 2, 2, 4, 5) == 0
+    assert Yatzy(1, 2, 3, 4, 5).small_straight() == 15
+    assert Yatzy(2, 3, 4, 5, 1).small_straight() == 15
+    assert Yatzy(1, 2, 2, 4, 5).small_straight() == 0
 
 
 def test_large_straight():

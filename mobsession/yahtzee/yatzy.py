@@ -153,14 +153,14 @@ class Yatzy:
                 result = (i + 1) * 3
         return result
 
-    @staticmethod
-    def small_straight(d1, d2, d3, d4, d5):
+    def small_straight(self):
+        result = 0
         tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
+        tallies[self.dice[0] - 1] += 1
+        tallies[self.dice[1] - 1] += 1
+        tallies[self.dice[2] - 1] += 1
+        tallies[self.dice[3] - 1] += 1
+        tallies[self.dice[4] - 1] += 1
         if (
             tallies[0] == 1
             and tallies[1] == 1
@@ -168,8 +168,8 @@ class Yatzy:
             and tallies[3] == 1
             and tallies[4] == 1
         ):
-            return 15
-        return 0
+            result = 15
+        return result
 
     @staticmethod
     def large_straight(d1, d2, d3, d4, d5):
