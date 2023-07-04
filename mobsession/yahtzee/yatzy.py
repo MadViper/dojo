@@ -107,7 +107,7 @@ class Yatzy:
                 break
         return result
 
-    def aaaa(self):
+    def two_pairs(self):
         counts = [0] * 6
         counts[self.dice[0] - 1] += 1
         counts[self.dice[1] - 1] += 1
