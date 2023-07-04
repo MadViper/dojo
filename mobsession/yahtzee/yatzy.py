@@ -109,6 +109,10 @@ class Yatzy:
 
     @staticmethod
     def two_pairs(d1, d2, d3, d4, d5):
+        return Yatzy.method_name(d1, d2, d3, d4, d5)
+
+    @staticmethod
+    def method_name(d1, d2, d3, d4, d5):
         counts = [0] * 6
         counts[d1 - 1] += 1
         counts[d2 - 1] += 1
@@ -121,7 +125,6 @@ class Yatzy:
             if counts[6 - i - 1] >= 2:
                 n = n + 1
                 score += 6 - i
-
         if n == 2:
             return score * 2
         else:
