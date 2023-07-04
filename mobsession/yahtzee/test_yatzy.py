@@ -66,10 +66,10 @@ def test_three_of_a_kind():
 
 
 def test_four_of_a_knd():
-    assert Yatzy(3, 3, 3, 3, 5).four_of_a_kind(3, 3, 3, 3, 5) == 12
-    assert Yatzy(5, 5, 5, 4, 5).four_of_a_kind(5, 5, 5, 4, 5) == 20
-    assert Yatzy(3, 3, 3, 3, 3).four_of_a_kind(3, 3, 3, 3, 3) == 12
-    assert Yatzy(3, 3, 3, 2, 1).four_of_a_kind(3, 3, 3, 2, 1) == 0
+    assert Yatzy(3, 3, 3, 3, 5).four_of_a_knd() == 12
+    assert Yatzy(5, 5, 5, 4, 5).four_of_a_knd() == 20
+    assert Yatzy(3, 3, 3, 3, 3).four_of_a_knd() == 12
+    assert Yatzy(3, 3, 3, 2, 1).four_of_a_knd() == 0
 
 
 def test_small_straight():
