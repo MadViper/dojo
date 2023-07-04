@@ -139,18 +139,18 @@ class Yatzy:
                 return (i + 1) * 4
         return 0
 
-    @staticmethod
-    def three_of_a_kind(d1, d2, d3, d4, d5):
+    def three_of_a_kind(self):
+        result = 0
         t = [0] * 6
-        t[d1 - 1] += 1
-        t[d2 - 1] += 1
-        t[d3 - 1] += 1
-        t[d4 - 1] += 1
-        t[d5 - 1] += 1
+        t[self.dice[0] - 1] += 1
+        t[self.dice[1] - 1] += 1
+        t[self.dice[2] - 1] += 1
+        t[self.dice[3] - 1] += 1
+        t[self.dice[4] - 1] += 1
         for i in range(6):
             if t[i] >= 3:
-                return (i + 1) * 3
-        return 0
+                result = (i + 1) * 3
+        return result
 
     @staticmethod
     def small_straight(d1, d2, d3, d4, d5):
