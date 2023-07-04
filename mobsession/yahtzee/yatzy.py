@@ -218,7 +218,3 @@ class Yatzy:
             return _2_at * 2 + _3_at * 3
         else:
             return 0
-
-
-def two_pairs(d1, d2, d3, d4, d5):
-    return Yatzy(d1, d2, d3, d4, d5).aaaa()
