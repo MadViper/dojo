@@ -2,15 +2,8 @@ class Yatzy:
     def __init__(self, d1: int, d2: int, d3: int, d4: int, d5: int) -> None:
         self.dice = d1, d2, d3, d4, d5
 
-    def chance(self):
-        total = 0
-        total += self.dice[0]
-        total += self.dice[1]
-        total += self.dice[2]
-        total += self.dice[3]
-        total += self.dice[4]
-
-        return total
+    def chance(self) -> int:
+        return sum(self.dice)
 
     def yatzy(self):
         result = 0
