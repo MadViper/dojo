@@ -7,14 +7,14 @@ class Yatzy:
         self.dice[3] = d4
         self.dice[4] = _5
 
-    @staticmethod
-    def chance(d1, d2, d3, d4, d5):
+    def chance(self):
         total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
+        total += self.dice[0]
+        total += self.dice[1]
+        total += self.dice[2]
+        total += self.dice[3]
+        total += self.dice[4]
+
         return total
 
     @staticmethod

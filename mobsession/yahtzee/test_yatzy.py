@@ -2,8 +2,8 @@ from .yatzy import Yatzy
 
 
 def test_chance_scores_sum_of_all_dice():
-    assert Yatzy(2, 3, 4, 5, 1).chance(2, 3, 4, 5, 1) == 15
-    assert Yatzy(3, 3, 4, 5, 1).chance(3, 3, 4, 5, 1) == 16
+    assert Yatzy(2, 3, 4, 5, 1).chance() == 15
+    assert Yatzy(3, 3, 4, 5, 1).chance() == 16
 
 
 def test_yatzy_scores_50():
