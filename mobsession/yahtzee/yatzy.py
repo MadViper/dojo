@@ -109,7 +109,7 @@ class Yatzy:
 
     @staticmethod
     def two_pairs(d1, d2, d3, d4, d5):
-        return method_name(d1, d2, d3, d4, d5)
+        return Yatzy(d1, d2, d3, d4, d5).aaaa()
 
     def aaaa(self):
         return method_name(
