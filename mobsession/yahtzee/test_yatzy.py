@@ -85,5 +85,5 @@ def test_large_straight():
 
 
 def test_full_house():
-    assert Yatzy(6, 2, 2, 2, 6).full_house(6, 2, 2, 2, 6) == 18
-    assert Yatzy(2, 3, 4, 5, 6).full_house(2, 3, 4, 5, 6) == 0
+    assert Yatzy(6, 2, 2, 2, 6).full_house() == 18
+    assert Yatzy(2, 3, 4, 5, 6).full_house() == 0

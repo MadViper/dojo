@@ -189,33 +189,33 @@ class Yatzy:
             result = 20
         return result
 
-    @staticmethod
-    def full_house(d1, d2, d3, d4, d5):
+    def full_house(self):
+        d_ = self.dice[0]
+        d_1 = self.dice[1]
+        d_2 = self.dice[2]
+        d_3 = self.dice[3]
+        d_4 = self.dice[4]
+        result = 0
         tallies = []
         _2 = False
         i = 0
         _2_at = 0
         _3 = False
         _3_at = 0
-
         tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-
+        tallies[d_ - 1] += 1
+        tallies[d_1 - 1] += 1
+        tallies[d_2 - 1] += 1
+        tallies[d_3 - 1] += 1
+        tallies[d_4 - 1] += 1
         for i in range(6):
             if tallies[i] == 2:
                 _2 = True
                 _2_at = i + 1
-
         for i in range(6):
             if tallies[i] == 3:
                 _3 = True
                 _3_at = i + 1
-
         if _2 and _3:
-            return _2_at * 2 + _3_at * 3
-        else:
-            return 0
+            result = _2_at * 2 + _3_at * 3
+        return result
