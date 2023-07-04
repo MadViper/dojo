@@ -18,14 +18,17 @@ class Yatzy:
         return total
 
     @staticmethod
-    def yatzy(dice):
+    def yatzy(d1, d2, d3, d4, d5):
+        dice = [d1, d2, d3, d4, d5]
+        result = 0
         counts = [0] * (len(dice) + 1)
         for die in dice:
             counts[die - 1] += 1
         for i in range(len(counts)):
             if counts[i] == 5:
-                return 50
-        return 0
+                result = 50
+
+        return result
 
     @staticmethod
     def ones(d1, d2, d3, d4, d5):

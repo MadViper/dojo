@@ -7,9 +7,9 @@ def test_chance_scores_sum_of_all_dice():
 
 
 def test_yatzy_scores_50():
-    assert Yatzy.yatzy([4, 4, 4, 4, 4]) == 50
-    assert Yatzy.yatzy([6, 6, 6, 6, 6]) == 50
-    assert Yatzy.yatzy([6, 6, 6, 6, 3]) == 0
+    assert Yatzy.yatzy(4, 4, 4, 4, 4) == 50
+    assert Yatzy.yatzy(6, 6, 6, 6, 6) == 50
+    assert Yatzy.yatzy(6, 6, 6, 6, 3) == 0
 
 
 def test_ones():
