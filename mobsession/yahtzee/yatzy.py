@@ -109,26 +109,7 @@ class Yatzy:
 
     @staticmethod
     def two_pairs(d1, d2, d3, d4, d5):
-        return Yatzy.method_name(d1, d2, d3, d4, d5)
-
-    @staticmethod
-    def method_name(d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if counts[6 - i - 1] >= 2:
-                n = n + 1
-                score += 6 - i
-        if n == 2:
-            return score * 2
-        else:
-            return 0
+        return method_name(d1, d2, d3, d4, d5)
 
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):
@@ -222,3 +203,22 @@ class Yatzy:
             return _2_at * 2 + _3_at * 3
         else:
             return 0
+
+
+def method_name(d1, d2, d3, d4, d5):
+    counts = [0] * 6
+    counts[d1 - 1] += 1
+    counts[d2 - 1] += 1
+    counts[d3 - 1] += 1
+    counts[d4 - 1] += 1
+    counts[d5 - 1] += 1
+    n = 0
+    score = 0
+    for i in range(6):
+        if counts[6 - i - 1] >= 2:
+            n = n + 1
+            score += 6 - i
+    if n == 2:
+        return score * 2
+    else:
+        return 0
