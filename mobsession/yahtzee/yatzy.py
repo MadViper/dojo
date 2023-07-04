@@ -28,20 +28,18 @@ class Yatzy:
 
         return result
 
-    @staticmethod
-    def ones(d1, d2, d3, d4, d5):
+    def ones(self):
         sum = 0
-        if d1 == 1:
+        if self.dice[0] == 1:
             sum += 1
-        if d2 == 1:
+        if self.dice[1] == 1:
             sum += 1
-        if d3 == 1:
+        if self.dice[2] == 1:
             sum += 1
-        if d4 == 1:
+        if self.dice[3] == 1:
             sum += 1
-        if d5 == 1:
+        if self.dice[4] == 1:
             sum += 1
-
         return sum
 
     @staticmethod
