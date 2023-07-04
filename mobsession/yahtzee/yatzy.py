@@ -5,11 +5,9 @@ class Yatzy:
     def chance(self) -> int:
         return sum(self.dice)
 
-    def yatzy(self):
+    def yatzy(self) -> int:
         result = 0
-        counts = [0] * (len(self.dice) + 1)
-        for die in self.dice:
-            counts[die - 1] += 1
+        counts = self.method_name()
         for i in range(len(counts)):
             if counts[i] == 5:
                 result = 50
@@ -112,12 +110,9 @@ class Yatzy:
         return result
 
     def method_name(self) -> [int]:
-        counts = [0] * 6
-        counts[self.dice[0] - 1] += 1
-        counts[self.dice[1] - 1] += 1
-        counts[self.dice[2] - 1] += 1
-        counts[self.dice[3] - 1] += 1
-        counts[self.dice[4] - 1] += 1
+        counts = [0] * (len(self.dice) + 1)
+        for die in self.dice:
+            counts[die - 1] += 1
 
         return counts
 
