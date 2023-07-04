@@ -22,12 +22,8 @@ class Yatzy:
     def threes(self) -> int:
         return self.dice.count(3) * 3
 
-    def fours(self):
-        total = 0
-        for at in range(5):
-            if self.dice[at] == 4:
-                total += 4
-        return total
+    def fours(self) -> int:
+        return self.dice.count(4) * 4
 
     def fives(self):
         s = 0
