@@ -25,12 +25,8 @@ class Yatzy:
     def fours(self) -> int:
         return self.dice.count(4) * 4
 
-    def fives(self):
-        s = 0
-        for i in range(len(self.dice)):
-            if self.dice[i] == 5:
-                s = s + 5
-        return s
+    def fives(self) -> int:
+        return self.dice.count(5) * 5
 
     def sixes(self):
         total = 0
