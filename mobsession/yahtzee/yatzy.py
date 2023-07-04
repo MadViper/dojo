@@ -146,20 +146,23 @@ class Yatzy:
             result = 20
         return result
 
-    def full_house(self):
+    def full_house(self) -> int:
         result = 0
-        _2 = False
+        is_2 = False
         _2_at = 0
-        _3 = False
+        is_3 = False
         _3_at = 0
+
         for i in range(6):
             if self.histogram[i] == 2:
-                _2 = True
+                is_2 = True
                 _2_at = i + 1
         for i in range(6):
             if self.histogram[i] == 3:
-                _3 = True
+                is_3 = True
                 _3_at = i + 1
-        if _2 and _3:
+
+        if is_2 and is_3:
             result = _2_at * 2 + _3_at * 3
+
         return result
