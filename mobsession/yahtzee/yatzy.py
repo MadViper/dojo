@@ -16,19 +16,8 @@ class Yatzy:
     def ones(self) -> int:
         return self.dice.count(1)
 
-    def twos(self):
-        total = 0
-        if self.dice[0] == 2:
-            total += 2
-        if self.dice[1] == 2:
-            total += 2
-        if self.dice[2] == 2:
-            total += 2
-        if self.dice[3] == 2:
-            total += 2
-        if self.dice[4] == 2:
-            total += 2
-        return total
+    def twos(self) -> int:
+        return self.dice.count(2) * 2
 
     def threes(self):
         s = 0
