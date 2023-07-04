@@ -111,6 +111,15 @@ class Yatzy:
     def two_pairs(d1, d2, d3, d4, d5):
         return method_name(d1, d2, d3, d4, d5)
 
+    def aaaa(self):
+        return method_name(
+            self.dice[0],
+            self.dice[1],
+            self.dice[2],
+            self.dice[3],
+            self.dice[4],
+        )
+
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):
         tallies = [0] * 6
