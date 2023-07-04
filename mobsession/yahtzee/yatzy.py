@@ -17,9 +17,8 @@ class Yatzy:
 
         return total
 
-    @staticmethod
-    def yatzy(d1, d2, d3, d4, d5):
-        dice = [d1, d2, d3, d4, d5]
+    def yatzy(self):
+        dice = self.dice
         result = 0
         counts = [0] * (len(dice) + 1)
         for die in dice:
