@@ -107,10 +107,6 @@ class Yatzy:
                 break
         return result
 
-    @staticmethod
-    def two_pairs(d1, d2, d3, d4, d5):
-        return Yatzy(d1, d2, d3, d4, d5).aaaa()
-
     def aaaa(self):
         counts = [0] * 6
         counts[self.dice[0] - 1] += 1
@@ -222,3 +218,7 @@ class Yatzy:
             return _2_at * 2 + _3_at * 3
         else:
             return 0
+
+
+def two_pairs(d1, d2, d3, d4, d5):
+    return Yatzy(d1, d2, d3, d4, d5).aaaa()
