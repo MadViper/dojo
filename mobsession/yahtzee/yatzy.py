@@ -56,18 +56,17 @@ class Yatzy:
             sum += 2
         return sum
 
-    @staticmethod
-    def threes(d1, d2, d3, d4, d5):
+    def threes(self):
         s = 0
-        if d1 == 3:
+        if self.dice[0] == 3:
             s += 3
-        if d2 == 3:
+        if self.dice[1] == 3:
             s += 3
-        if d3 == 3:
+        if self.dice[2] == 3:
             s += 3
-        if d4 == 3:
+        if self.dice[3] == 3:
             s += 3
-        if d5 == 3:
+        if self.dice[4] == 3:
             s += 3
         return s
 
