@@ -26,15 +26,6 @@ class Yatzy:
     def sixes(self) -> int:
         return self.dice.count(6) * 6
 
-    def one_pair(self) -> int:
-        result = 0
-
-        for i, frequency in enumerate(self.histogram, start=1):
-            if frequency == 2:
-                result = i * 2
-
-        return result
-
     def two_pairs(self):
         n = 0
         score = 0
@@ -48,12 +39,20 @@ class Yatzy:
             result = 0
         return result
 
-    def four_of_a_knd(self):
+    def one_pair(self) -> int:
+        return self.n_of_a_kind(2)
+
+    def three_of_a_kind(self) -> int:
+        return self.n_of_a_kind(3)
+
+    def four_of_a_knd(self) -> int:
+        return self.n_of_a_kind(4)
+
+    def n_of_a_kind(self, n: int) -> int:
         result = 0
         for i, frequency in enumerate(self.histogram, start=1):
-            if frequency >= 4:
-                result = i * 4
-
+            if frequency >= n:
+                result = i * n
         return result
 
     @property
@@ -61,14 +60,6 @@ class Yatzy:
         result = [0] * 6
         for die in self.dice:
             result[die - 1] += 1
-
-        return result
-
-    def three_of_a_kind(self):
-        result = 0
-        for i, frequency in enumerate(self.histogram, start=1):
-            if frequency >= 3:
-                result = i * 3
 
         return result
 
