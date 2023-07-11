@@ -99,10 +99,7 @@ class Yatzy:
         return sorted(self.dice) == [2, 3, 4, 5, 6]
 
     def full_house(self) -> int:
-        result = 0
+        return sum(self.dice) if self.is_full_house() else 0
 
-        is_full_house = 2 in self.histogram and 3 in self.histogram
-        if is_full_house:
-            result = sum(self.dice)
-
-        return result
+    def is_full_house(self) -> bool:
+        return 2 in self.histogram and 3 in self.histogram
