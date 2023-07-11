@@ -79,10 +79,13 @@ class Yatzy:
     def small_straight(self):
         result = 0
 
-        if all(f == 1 for f in self.histogram[:-1]):
+        if self.is_small_straight():
             result = 15
 
         return result
+
+    def is_small_straight(self) -> bool:
+        return sorted(self.dice) == [1, 2, 3, 4, 5]
 
     def large_straight(self):
         result = 0
