@@ -50,9 +50,9 @@ class Yatzy:
 
     def four_of_a_knd(self):
         result = 0
-        for i in range(6):
-            if self.histogram[i] >= 4:
-                result = (i + 1) * 4
+        for i, frequency in enumerate(self.histogram, start=1):
+            if frequency >= 4:
+                result = i * 4
 
         return result
 
