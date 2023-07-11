@@ -87,10 +87,13 @@ class Yatzy:
     def large_straight(self):
         result = 0
 
-        if all(f == 1 for f in self.histogram[1:]):
+        if self.is_large_straight():
             result = 20
 
         return result
+
+    def is_large_straight(self) -> bool:
+        return all(f == 1 for f in self.histogram[1:])
 
     def full_house(self) -> int:
         result = 0
