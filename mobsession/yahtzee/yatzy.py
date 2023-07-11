@@ -59,13 +59,13 @@ class Yatzy:
     def histogram(self) -> [int]:
         return [self.dice.count(d) for d in range(1, 7)]
 
-    def small_straight(self):
+    def small_straight(self) -> int:
         return 15 if self.is_small_straight() else 0
 
     def is_small_straight(self) -> bool:
         return sorted(self.dice) == [1, 2, 3, 4, 5]
 
-    def large_straight(self):
+    def large_straight(self) -> int:
         return 20 if self.is_large_straight() else 0
 
     def is_large_straight(self) -> bool:
