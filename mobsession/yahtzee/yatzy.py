@@ -109,7 +109,6 @@ class Yatzy:
             if self.histogram[i] == 2:
                 is_pair = True
                 pair_at = i + 1
-        for i in range(6):
             if self.histogram[i] == 3:
                 is_triple = True
                 triple_at = i + 1
