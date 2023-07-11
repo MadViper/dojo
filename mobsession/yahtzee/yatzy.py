@@ -78,13 +78,8 @@ class Yatzy:
 
     def small_straight(self):
         result = 0
-        if (
-            self.histogram[0] == 1
-            and self.histogram[1] == 1
-            and self.histogram[2] == 1
-            and self.histogram[3] == 1
-            and self.histogram[4] == 1
-        ):
+
+        if all(f == 1 for f in self.histogram[:-1]):
             result = 15
 
         return result
