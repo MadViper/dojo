@@ -86,14 +86,10 @@ class Yatzy:
 
     def large_straight(self):
         result = 0
-        if (
-            self.histogram[1] == 1
-            and self.histogram[2] == 1
-            and self.histogram[3] == 1
-            and self.histogram[4] == 1
-            and self.histogram[5] == 1
-        ):
+
+        if all(f == 1 for f in self.histogram[1:]):
             result = 20
+
         return result
 
     def full_house(self) -> int:
