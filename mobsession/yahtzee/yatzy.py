@@ -93,7 +93,7 @@ class Yatzy:
         return result
 
     def is_large_straight(self) -> bool:
-        return all(f == 1 for f in self.histogram[1:])
+        return sorted(self.dice) == [2, 3, 4, 5, 6]
 
     def full_house(self) -> int:
         result = 0
