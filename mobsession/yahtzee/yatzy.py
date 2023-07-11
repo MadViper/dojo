@@ -100,21 +100,21 @@ class Yatzy:
 
     def full_house(self) -> int:
         result = 0
-        is_2 = False
-        _2_at = 0
-        is_3 = False
-        _3_at = 0
+        is_pair = False
+        pair_at = 0
+        is_triple = False
+        triple_at = 0
 
         for i in range(6):
             if self.histogram[i] == 2:
-                is_2 = True
-                _2_at = i + 1
+                is_pair = True
+                pair_at = i + 1
         for i in range(6):
             if self.histogram[i] == 3:
-                is_3 = True
-                _3_at = i + 1
+                is_triple = True
+                triple_at = i + 1
 
-        if is_2 and is_3:
-            result = _2_at * 2 + _3_at * 3
+        if is_pair and is_triple:
+            result = pair_at * 2 + triple_at * 3
 
         return result
