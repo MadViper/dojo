@@ -103,10 +103,10 @@ class Yatzy:
         pair_at = 0
         triple_at = 0
 
-        for i in range(6):
-            if self.histogram[i] == 2:
+        for i, frequency in enumerate(self.histogram):
+            if frequency == 2:
                 pair_at = i + 1
-            if self.histogram[i] == 3:
+            if frequency == 3:
                 triple_at = i + 1
 
         if pair_at and triple_at:
