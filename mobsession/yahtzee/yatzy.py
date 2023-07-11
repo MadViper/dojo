@@ -26,18 +26,16 @@ class Yatzy:
     def sixes(self) -> int:
         return self.dice.count(6) * 6
 
-    def two_pairs(self):
+    def two_pairs(self) -> int:
         n = 0
         score = 0
-        for i in range(6):
-            if self.histogram[6 - i - 1] >= 2:
-                n = n + 1
-                score += 6 - i
-        if n == 2:
-            result = score * 2
-        else:
-            result = 0
-        return result
+
+        for i, frequency in enumerate(self.histogram, start=1):
+            if frequency >= 2:
+                n += 1
+                score += i * 2
+
+        return score if n == 2 else 0
 
     def one_pair(self) -> int:
         return self.n_of_a_kind(2)
