@@ -57,11 +57,7 @@ class Yatzy:
 
     @property
     def histogram(self) -> [int]:
-        result = [0] * 6
-        for die in self.dice:
-            result[die - 1] += 1
-
-        return result
+        return [self.dice.count(d) for d in range(1, 7)]
 
     def small_straight(self):
         result = 0
