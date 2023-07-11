@@ -6,12 +6,7 @@ class Yatzy:
         return sum(self.dice)
 
     def yatzy(self) -> int:
-        result = 0
-        for i in range(len(self.histogram)):
-            if self.histogram[i] == 5:
-                result = 50
-
-        return result
+        return 50 if 5 in self.histogram else 0
 
     def ones(self) -> int:
         return self.dice.count(1)
