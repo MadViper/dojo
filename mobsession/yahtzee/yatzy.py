@@ -66,9 +66,9 @@ class Yatzy:
 
     def three_of_a_kind(self):
         result = 0
-        for i in range(6):
-            if self.histogram[i] >= 3:
-                result = (i + 1) * 3
+        for i, frequency in enumerate(self.histogram, start=1):
+            if frequency >= 3:
+                result = i * 3
 
         return result
 
