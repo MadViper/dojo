@@ -71,12 +71,7 @@ class Yatzy:
         return sorted(self.dice) == [1, 2, 3, 4, 5]
 
     def large_straight(self):
-        result = 0
-
-        if self.is_large_straight():
-            result = 20
-
-        return result
+        return 20 if self.is_large_straight() else 0
 
     def is_large_straight(self) -> bool:
         return sorted(self.dice) == [2, 3, 4, 5, 6]
