@@ -100,16 +100,16 @@ class Yatzy:
 
     def full_house(self) -> int:
         result = 0
-        pair_of_dice = 0
-        triple_of_dice = 0
+        is_pair = False
+        is_triple = False
 
         for i, frequency in enumerate(self.histogram):
             if frequency == 2:
-                pair_of_dice = i + 1
+                is_pair = True
             if frequency == 3:
-                triple_of_dice = i + 1
+                is_triple = True
 
-        if pair_of_dice and triple_of_dice:
+        if is_pair and is_triple:
             result = sum(self.dice)
 
         return result
