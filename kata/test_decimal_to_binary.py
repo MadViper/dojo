@@ -3,7 +3,7 @@
 
 def decimal_to_binary(number: int) -> str:
     binary = str(number)
-    padding = (16 - 1) * "0"
+    padding = (16 - len(binary)) * "0"
 
     return padding + binary
 
