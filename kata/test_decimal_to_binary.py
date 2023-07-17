@@ -10,3 +10,4 @@ def decimal_to_binary(number: int) -> str:
 
 def test():
     assert decimal_to_binary(0) == "0000000000000000"
+    assert decimal_to_binary(1) == "0000000000000001"
