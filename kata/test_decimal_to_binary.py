@@ -2,7 +2,7 @@
 
 
 def decimal_to_binary(number: int) -> str:
-    return "000000000000000" + str(number)
+    return 15 * "0" + str(number)
 
 
 def test():
