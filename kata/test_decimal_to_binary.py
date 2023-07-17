@@ -13,3 +13,4 @@ def test():
     assert decimal_to_binary(0) == "0000000000000000"
     assert decimal_to_binary(1) == "0000000000000001"
     assert decimal_to_binary(2) == "0000000000000010"
+    assert decimal_to_binary(3) == "0000000000000011"
