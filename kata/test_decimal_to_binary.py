@@ -3,12 +3,11 @@
 
 def decimal_to_binary(number: int) -> str:
     binary = ""
-    for power in reversed(range(3)):
+
+    for power in reversed(range(16)):
         binary += abracadabra(number, power)
 
-    padding = (16 - len(binary)) * "0"
-
-    return padding + binary
+    return binary
 
 
 def abracadabra(number: int, power: int) -> str:
