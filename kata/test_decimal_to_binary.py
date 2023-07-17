@@ -2,11 +2,7 @@
 
 
 def decimal_to_binary(number: int) -> str:
-    return "".join(abracadabra(number, power) for power in reversed(range(16)))
-
-
-def abracadabra(number: int, power: int) -> str:
-    return str(number // 2**power % 2)
+    return "".join(str((number >> i) & 1) for i in reversed(range(16)))
 
 
 def test():
