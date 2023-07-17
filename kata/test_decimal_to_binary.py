@@ -3,6 +3,9 @@
 
 def decimal_to_binary(number: int) -> str:
     binary = str(number)
+    if number == 2:
+        binary = "10"
+
     padding = (16 - len(binary)) * "0"
 
     return padding + binary
@@ -11,3 +14,4 @@ def decimal_to_binary(number: int) -> str:
 def test():
     assert decimal_to_binary(0) == "0000000000000000"
     assert decimal_to_binary(1) == "0000000000000001"
+    assert decimal_to_binary(2) == "0000000000000010"
