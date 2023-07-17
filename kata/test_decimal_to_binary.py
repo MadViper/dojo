@@ -2,7 +2,9 @@
 
 
 def decimal_to_binary(number: int) -> str:
-    binary = abracadabra(number, 2) + abracadabra(number, 1) + abracadabra(number, 0)
+    binary = ""
+    for power in reversed(range(3)):
+        binary += abracadabra(number, power)
 
     padding = (16 - len(binary)) * "0"
 
