@@ -2,15 +2,15 @@
 
 
 def decimal_to_binary(number: int) -> str:
-    binary = (
-        str(number // 2**2 % 2)
-        + str(number // 2**1 % 2)
-        + str(number // 2**0 % 2)
-    )
+    binary = abracadabra(number, 2) + abracadabra(number, 1) + abracadabra(number, 0)
 
     padding = (16 - len(binary)) * "0"
 
     return padding + binary
+
+
+def abracadabra(number: int, power: int) -> str:
+    return str(number // 2**power % 2)
 
 
 def test():
