@@ -5,7 +5,7 @@ def decimal_to_binary(number: int) -> str:
     binary = str(number // 2 % 2) + str(number // 1 % 2)
 
     if number == 4:
-        binary = str(number // 4 % 2) + binary
+        binary = str(number // 4 % 2) + str(number // 2 % 2) + str(number // 1 % 2)
 
     padding = (16 - len(binary)) * "0"
 
