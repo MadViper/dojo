@@ -2,8 +2,10 @@
 
 
 def decimal_to_binary(number: int) -> str:
+    binary = str(number)
     padding = 15 * "0"
-    return padding + str(number)
+
+    return padding + binary
 
 
 def test():
