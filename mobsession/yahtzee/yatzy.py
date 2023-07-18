@@ -48,9 +48,6 @@ class Yatzy:
     def chance(self) -> int:
         return self.roll.sum()
 
-    def yatzy(self) -> int:
-        return 50 if self.roll.is_yatzy() else 0
-
     def ones(self) -> int:
         return self.roll.count(1)
 
@@ -97,6 +94,9 @@ class Yatzy:
 
     def large_straight(self) -> int:
         return 20 if self.roll.is_large_straight() else 0
+
+    def yatzy(self) -> int:
+        return 50 if self.roll.is_yatzy() else 0
 
     def full_house(self) -> int:
         return self.roll.sum() if self.roll.is_full_house() else 0
