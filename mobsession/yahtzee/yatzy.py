@@ -90,9 +90,7 @@ class Yatzy:
         return self.n_of_a_kind(4)
 
     def n_of_a_kind(self, n: int) -> int:
-        result = self.roll.pick_n_of_a_kind(n)
-
-        return result * n
+        return self.roll.pick_n_of_a_kind(n) * n
 
     def small_straight(self) -> int:
         return 15 if self.roll.is_small_straight() else 0
