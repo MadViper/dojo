@@ -25,13 +25,16 @@ class Roll:
         return result
 
     def pick_two_pairs(self) -> list[int]:
-        pairs = []
+        return self.pick_n_of_a_kinds(2)
+
+    def pick_n_of_a_kinds(self, n: int) -> list[int]:
+        result = []
 
         for i, frequency in enumerate(self.histogram, start=1):
-            if frequency >= 2:
-                pairs.append(i)
+            if frequency >= n:
+                result.append(i)
 
-        return pairs
+        return result
 
     @property
     def histogram(self) -> [int]:
