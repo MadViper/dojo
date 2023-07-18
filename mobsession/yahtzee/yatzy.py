@@ -31,8 +31,7 @@ class Roll:
 
 class Yatzy:
     def __init__(self, d1: int, d2: int, d3: int, d4: int, d5: int) -> None:
-        self.dice = [d1, d2, d3, d4, d5]
-        self.roll = Roll(self.dice)
+        self.roll = Roll([d1, d2, d3, d4, d5])
 
     def chance(self) -> int:
         return self.roll.sum()
