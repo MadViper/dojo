@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Abracadabra:
+class Roll:
     dice: list[int]
 
     @property
@@ -23,16 +23,16 @@ class Abracadabra:
         return 2 in self.histogram and 3 in self.histogram
 
 
-class Yatzy(Abracadabra):
+class Yatzy:
     def __init__(self, d1: int, d2: int, d3: int, d4: int, d5: int) -> None:
         self.dice = [d1, d2, d3, d4, d5]
-        super().__init__(self.dice)
+        self.roll = Roll(self.dice)
 
     def chance(self) -> int:
         return sum(self.dice)
 
     def yatzy(self) -> int:
-        return 50 if 5 in self.histogram else 0
+        return 50 if 5 in self.roll.histogram else 0
 
     def ones(self) -> int:
         return self.dice.count(1)
@@ -56,7 +56,7 @@ class Yatzy(Abracadabra):
         n = 0
         score = 0
 
-        for i, frequency in enumerate(self.histogram, start=1):
+        for i, frequency in enumerate(self.roll.histogram, start=1):
             if frequency >= 2:
                 n += 1
                 score += i * 2
@@ -74,16 +74,16 @@ class Yatzy(Abracadabra):
 
     def n_of_a_kind(self, n: int) -> int:
         result = 0
-        for i, frequency in enumerate(self.histogram, start=1):
+        for i, frequency in enumerate(self.roll.histogram, start=1):
             if frequency >= n:
                 result = i * n
         return result
 
     def small_straight(self) -> int:
-        return 15 if self.is_small_straight() else 0
+        return 15 if self.roll.is_small_straight() else 0
 
     def large_straight(self) -> int:
-        return 20 if self.is_large_straight() else 0
+        return 20 if self.roll.is_large_straight() else 0
 
     def full_house(self) -> int:
-        return sum(self.dice) if self.is_full_house() else 0
+        return sum(self.dice) if self.roll.is_full_house() else 0
