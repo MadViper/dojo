@@ -28,6 +28,9 @@ class Roll:
     def is_full_house(self) -> bool:
         return 2 in self.histogram and 3 in self.histogram
 
+    def is_yatzy(self) -> bool:
+        return 5 in self.histogram
+
 
 class Yatzy:
     def __init__(self, d1: int, d2: int, d3: int, d4: int, d5: int) -> None:
@@ -37,7 +40,7 @@ class Yatzy:
         return self.roll.sum()
 
     def yatzy(self) -> int:
-        return 50 if 5 in self.roll.histogram else 0
+        return 50 if self.roll.is_yatzy() else 0
 
     def ones(self) -> int:
         return self.roll.count(1)
