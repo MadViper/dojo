@@ -16,13 +16,7 @@ class Roll:
         return sum(self.dice)
 
     def pick_n_of_a_kind(self, n: int) -> int:
-        result = 0
-
-        for i, frequency in enumerate(self.histogram, start=1):
-            if frequency >= n:
-                result = i
-
-        return result
+        return max(self.pick_n_of_a_kinds(n), default=0)
 
     def pick_two_pairs(self) -> list[int]:
         return self.pick_n_of_a_kinds(2)
