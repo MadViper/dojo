@@ -1,12 +1,32 @@
 # TODO:
 # Split responsibilities
-# Category detection
-# Score calculator
+#   - Category detection
+#   - Score calculator
+from dataclasses import dataclass
 
 
-class Yatzy:
+@dataclass
+class Abracadabra:
+    dice: list[int]
+
+    @property
+    def histogram(self) -> [int]:
+        return [self.dice.count(d) for d in range(1, 7)]
+
+    def is_small_straight(self) -> bool:
+        return sorted(self.dice) == [1, 2, 3, 4, 5]
+
+    def is_large_straight(self) -> bool:
+        return sorted(self.dice) == [2, 3, 4, 5, 6]
+
+    def is_full_house(self) -> bool:
+        return 2 in self.histogram and 3 in self.histogram
+
+
+class Yatzy(Abracadabra):
     def __init__(self, d1: int, d2: int, d3: int, d4: int, d5: int) -> None:
-        self.dice = d1, d2, d3, d4, d5
+        self.dice = [d1, d2, d3, d4, d5]
+        super().__init__(self.dice)
 
     def chance(self) -> int:
         return sum(self.dice)
@@ -59,24 +79,11 @@ class Yatzy:
                 result = i * n
         return result
 
-    @property
-    def histogram(self) -> [int]:
-        return [self.dice.count(d) for d in range(1, 7)]
-
     def small_straight(self) -> int:
         return 15 if self.is_small_straight() else 0
-
-    def is_small_straight(self) -> bool:
-        return sorted(self.dice) == [1, 2, 3, 4, 5]
 
     def large_straight(self) -> int:
         return 20 if self.is_large_straight() else 0
 
-    def is_large_straight(self) -> bool:
-        return sorted(self.dice) == [2, 3, 4, 5, 6]
-
     def full_house(self) -> int:
         return sum(self.dice) if self.is_full_house() else 0
-
-    def is_full_house(self) -> bool:
-        return 2 in self.histogram and 3 in self.histogram
