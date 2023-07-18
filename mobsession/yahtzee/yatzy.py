@@ -15,6 +15,15 @@ class Roll:
     def sum(self) -> int:
         return sum(self.dice)
 
+    def pick_n_of_a_kind(self, n: int) -> int:
+        result = 0
+
+        for i, frequency in enumerate(self.histogram, start=1):
+            if frequency >= n:
+                result = i
+
+        return result
+
     @property
     def histogram(self) -> [int]:
         return [self.dice.count(d) for d in range(1, 7)]
@@ -81,11 +90,9 @@ class Yatzy:
         return self.n_of_a_kind(4)
 
     def n_of_a_kind(self, n: int) -> int:
-        result = 0
-        for i, frequency in enumerate(self.roll.histogram, start=1):
-            if frequency >= n:
-                result = i * n
-        return result
+        result = self.roll.pick_n_of_a_kind(n)
+
+        return result * n
 
     def small_straight(self) -> int:
         return 15 if self.roll.is_small_straight() else 0
