@@ -24,6 +24,15 @@ class Roll:
 
         return result
 
+    def pick_two_pairs(self) -> list[int]:
+        pairs = []
+
+        for i, frequency in enumerate(self.histogram, start=1):
+            if frequency >= 2:
+                pairs.append(i)
+
+        return pairs
+
     @property
     def histogram(self) -> [int]:
         return [self.dice.count(d) for d in range(1, 7)]
@@ -67,15 +76,9 @@ class Yatzy:
         return self.roll.count(6) * 6
 
     def two_pairs(self) -> int:
-        n = 0
-        score = 0
+        pairs = self.roll.pick_two_pairs()
 
-        for i, frequency in enumerate(self.roll.histogram, start=1):
-            if frequency >= 2:
-                n += 1
-                score += i * 2
-
-        return score if n == 2 else 0
+        return sum(pairs) * 2 if len(pairs) == 2 else 0
 
     def one_pair(self) -> int:
         return self.n_of_a_kind(2)
