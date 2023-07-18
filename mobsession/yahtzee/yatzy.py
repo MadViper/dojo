@@ -9,6 +9,12 @@ from dataclasses import dataclass
 class Roll:
     dice: list[int]
 
+    def count(self, value: int) -> int:
+        return self.dice.count(value)
+
+    def sum(self) -> int:
+        return sum(self.dice)
+
     @property
     def histogram(self) -> [int]:
         return [self.dice.count(d) for d in range(1, 7)]
@@ -29,28 +35,28 @@ class Yatzy:
         self.roll = Roll(self.dice)
 
     def chance(self) -> int:
-        return sum(self.dice)
+        return self.roll.sum()
 
     def yatzy(self) -> int:
         return 50 if 5 in self.roll.histogram else 0
 
     def ones(self) -> int:
-        return self.dice.count(1)
+        return self.roll.count(1)
 
     def twos(self) -> int:
-        return self.dice.count(2) * 2
+        return self.roll.count(2) * 2
 
     def threes(self) -> int:
-        return self.dice.count(3) * 3
+        return self.roll.count(3) * 3
 
     def fours(self) -> int:
-        return self.dice.count(4) * 4
+        return self.roll.count(4) * 4
 
     def fives(self) -> int:
-        return self.dice.count(5) * 5
+        return self.roll.count(5) * 5
 
     def sixes(self) -> int:
-        return self.dice.count(6) * 6
+        return self.roll.count(6) * 6
 
     def two_pairs(self) -> int:
         n = 0
@@ -86,4 +92,4 @@ class Yatzy:
         return 20 if self.roll.is_large_straight() else 0
 
     def full_house(self) -> int:
-        return sum(self.dice) if self.roll.is_full_house() else 0
+        return self.roll.sum() if self.roll.is_full_house() else 0
