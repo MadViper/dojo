@@ -2,6 +2,8 @@
 # Split responsibilities
 #   - Category detection
 #   - Score calculator
+# Improve roll interface?!
+
 from dataclasses import dataclass
 
 
